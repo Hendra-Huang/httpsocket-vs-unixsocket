@@ -1,0 +1,10 @@
+version: "2"
+services:
+    server:
+        build:
+            context: ./app
+        image: "server"
+        container_name: "server"
+        ports:
+            - "80:80"
+            - "81:81"
