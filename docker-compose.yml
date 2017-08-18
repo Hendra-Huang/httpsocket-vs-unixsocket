@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
     server:
         build:
@@ -8,3 +8,6 @@ services:
         ports:
             - "80:80"
             - "81:81"
+            - "9000:9000"
+        sysctls:
+            - net.core.somaxconn=1024
