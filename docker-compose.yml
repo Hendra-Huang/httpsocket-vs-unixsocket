@@ -1,13 +1,37 @@
 version: "3"
 services:
-    server:
+    httpsocket:
         build:
-            context: ./app
-        image: "server"
-        container_name: "server"
+            context: ./httpsocket
+        image: "httpsocket"
+        container_name: "httpsocket"
         ports:
             - "80:80"
-            - "81:81"
-            - "9000:9000"
+
+    unixsocket:
+        build:
+            context: ./unixsocket
+        image: "unixsocket"
+        container_name: "unixsocket"
+        ports:
+            - "81:80"
+        sysctls:
+            - net.core.somaxconn=1024
+
+    fasthttp:
+        build:
+            context: ./fasthttp
+        image: "fasthttp"
+        container_name: "fasthttp"
+        ports:
+            - "82:80"
+
+    fasthttpunix:
+        build:
+            context: ./fasthttpunix
+        image: "fasthttpunix"
+        container_name: "fasthttpunix"
+        ports:
+            - "83:80"
         sysctls:
             - net.core.somaxconn=1024
