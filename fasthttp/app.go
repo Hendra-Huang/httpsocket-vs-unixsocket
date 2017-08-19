@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/valyala/fasthttp"
+	"github.com/valyala/fasthttp/reuseport"
 )
 
 type Server struct {
@@ -20,7 +21,12 @@ func main() {
 	server := Server{}
 
 	server.Type = "FAST HTTP"
-	err := fasthttp.ListenAndServe(":9000", server.HandleFastHTTP)
+	listener, err := reuseport.Listen("tcp6", ":9000")
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = fasthttp.Serve(listener, server.HandleFastHTTP)
+	//err := fasthttp.ListenAndServe(":9000", server.HandleFastHTTP)
 	if err != nil {
 		log.Fatal(err)
 	}

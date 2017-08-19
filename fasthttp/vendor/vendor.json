@@ -45,10 +45,22 @@
 			"revisionTime": "2017-07-21T13:45:47Z"
 		},
 		{
+			"checksumSHA1": "t63Z65fvt1jprfjIsIpvRo8xah4=",
+			"path": "github.com/valyala/fasthttp/reuseport",
+			"revision": "ae643c872d2c060154a4fb2162dc1c0ab1693ccd",
+			"revisionTime": "2017-07-21T13:45:47Z"
+		},
+		{
 			"checksumSHA1": "YXXy4b1yOQx/iL3Icv6svTmcGss=",
 			"path": "github.com/valyala/fasthttp/stackless",
 			"revision": "ae643c872d2c060154a4fb2162dc1c0ab1693ccd",
 			"revisionTime": "2017-07-21T13:45:47Z"
+		},
+		{
+			"checksumSHA1": "R/Mpe0uUp5HeqWrdrH5qE2qZuE8=",
+			"path": "github.com/valyala/tcplisten",
+			"revision": "ceec8f93295a060cdb565ec25e4ccf17941dbd55",
+			"revisionTime": "2016-11-14T21:01:44Z"
 		}
 	],
 	"rootPath": "github.com/Hendra-Huang/httpsocket-vs-unixsocket/fasthttp"
